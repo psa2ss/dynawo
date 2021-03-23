@@ -46,7 +46,7 @@ model CurrentLoop "Current loop control for grid forming and grid following conv
 
   Modelica.Blocks.Math.Gain gaind (k = Kpc) annotation(
     Placement(visible = true, transformation(origin = {-12, 80}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
-  Modelica.Blocks.Continuous.Integrator integratord(y_start = Rfilter * IdConv0Pu, k = Kic)  annotation(
+  Modelica.Blocks.Continuous.Integrator integratord(k = Kic, y_start = Rfilter * IdConv0Pu) annotation(
     Placement(visible = true, transformation(origin = {-12, 112}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
   Modelica.Blocks.Math.Feedback feedbackd annotation(
     Placement(visible = true, transformation(origin = {-62, 80}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
@@ -76,8 +76,6 @@ model CurrentLoop "Current loop control for grid forming and grid following conv
     Placement(visible = true, transformation(origin = {112, 92}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
   Modelica.Blocks.Math.Add addq2 annotation(
     Placement(visible = true, transformation(origin = {114, -86}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
-
-protected
 
   parameter Types.PerUnit UdFilter0Pu;
   parameter Types.PerUnit UdConv0Pu;

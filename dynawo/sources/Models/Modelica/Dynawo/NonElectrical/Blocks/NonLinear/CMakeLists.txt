@@ -14,6 +14,7 @@ set(MODEL_FILES
   package.mo
   package.order
   ApproximatedDelay.mo
+  DelayFlag.mo
   FirstOrderLimiter.mo
   FirstOrderWithDelay.mo
   FixedBooleanDelay.mo
@@ -29,6 +30,10 @@ set(MODEL_FILES
   MinThresholdSwitch.mo
   PulseFixedDuration.mo
   PulseMinimumDuration.mo
+  MultiSwitchThree.mo
+  MultiSwitchFour.mo
+  MultiSwitchFive.mo
+  SwitchInt.mo
   VariableLimiter.mo
   )
 

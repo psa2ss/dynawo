@@ -11,7 +11,11 @@
 set(MODEL_FILES
   package.mo
   package.order
+  FirstOrderRamp.mo
+  FirstOrderRampLimit.mo
+  IntegratorFixLimits.mo
   IntegratorSetFreeze.mo
+  IntegratorVariableLimits.mo
   LeadLag.mo
   LimPIDFreeze.mo
   PIAntiWindup.mo

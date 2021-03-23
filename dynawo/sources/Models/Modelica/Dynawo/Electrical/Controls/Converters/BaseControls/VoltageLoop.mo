@@ -45,7 +45,7 @@ model VoltageLoop "Voltage loop control for grid forming and grid following conv
 
   Modelica.Blocks.Math.Gain gaind (k = Kpv) annotation(
     Placement(visible = true, transformation(origin = {-12, 80}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
-  Modelica.Blocks.Continuous.Integrator integratord(y_start = 0, k = Kiv)  annotation(
+  Modelica.Blocks.Continuous.Integrator integratord(k = Kiv, y_start = 0)  annotation(
     Placement(visible = true, transformation(origin = {-12, 112}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
   Modelica.Blocks.Math.Feedback feedbackd annotation(
     Placement(visible = true, transformation(origin = {-62, 80}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));

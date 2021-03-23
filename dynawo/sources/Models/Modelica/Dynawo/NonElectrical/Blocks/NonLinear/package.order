@@ -1,5 +1,6 @@
 BaseClasses
 ApproximatedDelay
+DelayFlag
 FirstOrderLimiter
 FirstOrderWithDelay
 FixedBooleanDelay
@@ -15,4 +16,8 @@ MaxThresholdSwitch
 MinThresholdSwitch
 PulseFixedDuration
 PulseMinimumDuration
+MultiSwitchThree
+MultiSwitchFour
+MultiSwitchFive
+SwitchInt
 VariableLimiter
