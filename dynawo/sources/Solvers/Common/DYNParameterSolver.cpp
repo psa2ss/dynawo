@@ -30,13 +30,6 @@ ParameterSolver::ParameterSolver(const string& name, const typeVarC_t& valueType
   value_(boost::none) {
 }
 
-#ifndef LANG_CXX11
-ParameterSolver::ParameterSolver(const ParameterSolver& parameter) :
-    ParameterCommon(parameter),
-    value_(parameter.value_) {
-}
-#endif
-
 double
 ParameterSolver::getDoubleValue() const {
   if (getValueType() == VAR_TYPE_DOUBLE)

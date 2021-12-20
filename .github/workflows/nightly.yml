@@ -20,7 +20,6 @@ jobs:
       DYNAWO_SRC_OPENMODELICA: /opt/OpenModelica/Source
       DYNAWO_RESULTS_SHOW: "false"
       DYNAWO_BUILD_TYPE: ${{ matrix.build-type }}
-      DYNAWO_CXX11_ENABLED: ${{ matrix.cxx11-standard }}
       DYNAWO_COMPILER: ${{ matrix.compiler }}
       DYNAWO_NB_PROCESSORS_USED: 2
 
@@ -51,7 +50,6 @@ jobs:
     env:
       DYNAWO_RESULTS_SHOW: "false"
       DYNAWO_BUILD_TYPE: Release
-      DYNAWO_CXX11_ENABLED: YES
       DYNAWO_COMPILER: GCC
       DYNAWO_PYTHON_COMMAND: python3
       DYNAWO_NB_PROCESSORS_USED: 2
@@ -85,7 +83,6 @@ jobs:
         compiler: [GCC, CLANG]
     env:
       DYNAWO_BUILD_TYPE: Release
-      DYNAWO_CXX11_ENABLED: YES
       DYNAWO_COMPILER: ${{ matrix.compiler }}
 
     steps:

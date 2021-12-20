@@ -55,19 +55,6 @@ nonUnitaryParameterInstance_(false) {
   }
 }
 
-#ifndef LANG_CXX11
-ParameterModeler::ParameterModeler(const ParameterModeler& parameter) :
-ParameterCommon(parameter),
-writeRights_(parameter.writeRights_),
-values_(parameter.values_),
-origin_(parameter.origin_),
-scope_(parameter.scope_),
-cardinality_(parameter.cardinality_),
-cardinalityInformator_(parameter.cardinalityInformator_),
-nonUnitaryParameterInstance_(parameter.nonUnitaryParameterInstance_) {
-}
-#endif
-
 void
 ParameterModeler::writeChecks(const parameterOrigin_t& origin) const {
   if (!isUnitary())
