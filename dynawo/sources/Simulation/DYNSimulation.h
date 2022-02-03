@@ -34,6 +34,7 @@
 #include "DYNSignalHandler.h"
 #include "PARParametersSetCollection.h"
 #include "DYNDataInterface.h"
+#include "DYNModeler.h"
 
 namespace timeline {
 class Timeline;
@@ -621,6 +622,7 @@ class Simulation {
   boost::shared_ptr<SimulationContext> context_;  ///< simulation context : configuration of the simulation
   boost::shared_ptr<job::JobEntry> jobEntry_;  ///< jobs data description
   boost::shared_ptr<Solver> solver_;  ///< solver used for the simulation
+  boost::shared_ptr<Modeler> modeler_;  ///< modeler used for the simulation
   boost::shared_ptr<Model> model_;  ///< model used for the simulation
   boost::shared_ptr<DataInterface> data_;  ///< Data interface associated to the job
   boost::shared_ptr<DynamicData> dyd_;  ///< Dynamic data container associated to the job

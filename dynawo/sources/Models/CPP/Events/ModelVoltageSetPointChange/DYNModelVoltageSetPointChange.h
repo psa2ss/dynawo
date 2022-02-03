@@ -28,9 +28,9 @@ namespace DYN {
 /**
  * @brief ModelVoltageSetPointChangeFactory Model factory
  *
- * Implementation of @p SubModelFactory template for ModelVoltageSetPointChangeFactory Model
+ * Implementation of @p ModelFactory template for ModelVoltageSetPointChangeFactory Model
  */
-class ModelVoltageSetPointChangeFactory : public SubModelFactory {
+class ModelVoltageSetPointChangeFactory : public ModelFactory {
  public:
   /**
    * @brief default constructor

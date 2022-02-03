@@ -46,11 +46,11 @@ using boost::shared_ptr;
 using parameters::ParametersSet;
 
 
-extern "C" DYN::SubModelFactory* getFactory() {
+extern "C" DYN::ModelFactory* getFactory() {
   return (new DYN::ModelLoadRestorativeWithLimitsFactory());
 }
 
-extern "C" void deleteFactory(DYN::SubModelFactory* factory) {
+extern "C" void deleteFactory(DYN::ModelFactory* factory) {
   delete factory;
 }
 

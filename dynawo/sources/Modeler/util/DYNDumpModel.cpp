@@ -137,7 +137,8 @@ int main(int argc, char ** argv) {
   }
   DYN::InitXerces xerces;
 
-  boost::shared_ptr<DYN::SubModel> model = DYN::SubModelFactory::createSubModelFromLib(inputFileName);
+  DYN::SubModelFactory factory;
+  boost::shared_ptr<DYN::SubModel> model = factory.createSubModelFromLib(inputFileName);
   model->defineVariablesInit();
   model->defineParametersInit();
   model->defineNamesInit();

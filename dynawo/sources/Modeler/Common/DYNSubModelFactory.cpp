@@ -31,14 +31,9 @@ using std::map;
 using std::string;
 
 namespace DYN {
-typedef SubModelFactory* getSubModelFactory_t();
+typedef ModelFactory* getSubModelFactory_t();
 
-SubModelFactory::~SubModelFactory() {}
-
-SubModelFactories::SubModelFactories() {
-}
-
-SubModelFactories::~SubModelFactories() {
+SubModelFactory::~SubModelFactory() {
   SubmodelFactoryIterator iter = factoryMap_.begin();
   for (; iter != factoryMap_.end(); ++iter) {
     boost::function<deleteSubModelFactory_t>& deleteFactory = factoryMapDelete_.find(iter->first)->second;
@@ -47,47 +42,30 @@ SubModelFactories::~SubModelFactories() {
   }
 }
 
-SubModelFactories& SubModelFactories::getInstance() {
-  static SubModelFactories factories;  ///< Factories already available
-  return factories;
-}
-
-SubModelFactories::SubmodelFactoryIterator SubModelFactories::find(const std::string& lib) {
-#ifdef LANG_CXX11
-  std::unique_lock<std::mutex> lock(factoriesMutex_);
-#endif
+SubModelFactory::SubmodelFactoryIterator SubModelFactory::find(const std::string& lib) {
   return (factoryMap_.find(lib));
 }
 
-bool SubModelFactories::end(SubmodelFactoryIterator& iter) {
-#ifdef LANG_CXX11
-  std::unique_lock<std::mutex> lock(factoriesMutex_);
-#endif
+bool SubModelFactory::end(SubmodelFactoryIterator& iter) {
   return (iter == factoryMap_.end());
 }
 
 void
-SubModelFactories::add(const std::string& lib, SubModelFactory* factory) {
-#ifdef LANG_CXX11
-  std::unique_lock<std::mutex> lock(factoriesMutex_);
-#endif
+SubModelFactory::add(const std::string& lib, ModelFactory* factory) {
   factoryMap_.insert(std::make_pair(lib, factory));
 }
 
-void SubModelFactories::add(const std::string& lib, const boost::function<deleteSubModelFactory_t>& deleteFactory) {
-#ifdef LANG_CXX11
-  std::unique_lock<std::mutex> lock(factoriesMutex_);
-#endif
+void SubModelFactory::add(const std::string& lib, const boost::function<deleteSubModelFactory_t>& deleteFactory) {
   factoryMapDelete_.insert(std::make_pair(lib, deleteFactory));
 }
 
 boost::shared_ptr<SubModel> SubModelFactory::createSubModelFromLib(const std::string & lib) {
-  SubModelFactories::SubmodelFactoryIterator iter = SubModelFactories::getInstance().find(lib);
+  SubmodelFactoryIterator iter = find(lib);
   SubModel* subModel;
   boost::shared_ptr<SubModel> subModelShared;
   boost::shared_ptr<boost::dll::shared_library> sharedLib;
 
-  if (SubModelFactories::getInstance().end(iter)) {
+  if (end(iter)) {
     std::string func;
     boost::function<getSubModelFactory_t> getFactory;
     boost::function<deleteSubModelFactory_t> deleteFactory;
@@ -112,10 +90,10 @@ boost::shared_ptr<SubModel> SubModelFactory::createSubModelFromLib(const std::st
       }
     }
 
-    SubModelFactory* factory = getFactory();
-    factory->lib_ = sharedLib;
-    SubModelFactories::getInstance().add(lib, factory);
-    SubModelFactories::getInstance().add(lib, deleteFactory);
+    ModelFactory* factory = getFactory();
+    factory->setLib(sharedLib);
+    add(lib, factory);
+    add(lib, deleteFactory);
     subModel = factory->create();
     SubModelDelete deleteSubModel(factory);
     subModelShared.reset(subModel, deleteSubModel);
@@ -127,7 +105,7 @@ boost::shared_ptr<SubModel> SubModelFactory::createSubModelFromLib(const std::st
   return subModelShared;
 }
 
-SubModelDelete::SubModelDelete(SubModelFactory* factory) : factory_(factory) {
+SubModelDelete::SubModelDelete(ModelFactory* factory) : factory_(factory) {
 }
 
 void SubModelDelete::operator()(SubModel* subModel) {

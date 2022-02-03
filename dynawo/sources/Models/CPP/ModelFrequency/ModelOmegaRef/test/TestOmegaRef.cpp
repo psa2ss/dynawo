@@ -33,7 +33,8 @@
 namespace DYN {
 
 static boost::shared_ptr<SubModel> initModelOmegaRef(double weightGen2) {
-  boost::shared_ptr<SubModel> modelOmegaRef = SubModelFactory::createSubModelFromLib("../DYNModelOmegaRef" + std::string(sharedLibraryExtension()));
+  static SubModelFactory factory;
+  boost::shared_ptr<SubModel> modelOmegaRef = factory.createSubModelFromLib("../DYNModelOmegaRef" + std::string(sharedLibraryExtension()));
 
   std::vector<ParameterModeler> parameters;
   modelOmegaRef->defineParameters(parameters);
@@ -54,7 +55,8 @@ static boost::shared_ptr<SubModel> initModelOmegaRef(double weightGen2) {
 }
 
 TEST(ModelsModelOmegaRef, ModelOmegaRefDefineMethods) {
-  boost::shared_ptr<SubModel> modelOmegaRef = SubModelFactory::createSubModelFromLib("../DYNModelOmegaRef" + std::string(sharedLibraryExtension()));
+  static SubModelFactory factory;
+  boost::shared_ptr<SubModel> modelOmegaRef = factory.createSubModelFromLib("../DYNModelOmegaRef" + std::string(sharedLibraryExtension()));
 
   std::vector<ParameterModeler> parameters;
   modelOmegaRef->defineParameters(parameters);
@@ -161,6 +163,7 @@ TEST(ModelsModelOmegaRef, ModelOmegaRefDefineMethods) {
 }
 
 TEST(ModelsModelOmegaRef, ModelOmegaRefTypeMethods) {
+  static SubModelFactory factory;
   boost::shared_ptr<SubModel> modelOmegaRef = initModelOmegaRef(-1);
   unsigned nbY = 13;
   unsigned nbF = 12;
@@ -202,7 +205,7 @@ TEST(ModelsModelOmegaRef, ModelOmegaRefTypeMethods) {
   ASSERT_NO_THROW(modelOmegaRef->setGequations());
   ASSERT_EQ(modelOmegaRef->evalCalculatedVarI(0), 0.);
 
-  boost::shared_ptr<SubModel> modelOmegaRef2 = SubModelFactory::createSubModelFromLib("../DYNModelOmegaRef" + std::string(sharedLibraryExtension()));
+  boost::shared_ptr<SubModel> modelOmegaRef2 = factory.createSubModelFromLib("../DYNModelOmegaRef" + std::string(sharedLibraryExtension()));
 
   std::vector<ParameterModeler> parameters;
   modelOmegaRef2->defineParameters(parameters);

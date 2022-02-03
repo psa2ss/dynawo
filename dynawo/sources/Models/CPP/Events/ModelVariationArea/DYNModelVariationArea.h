@@ -28,9 +28,9 @@ namespace DYN {
 /**
  * @brief ModelVariationAreaFactory Model factory
  *
- * Implementation of @p SubModelFactory template for ModelVariationAreaFactory Model
+ * Implementation of @p ModelFactory template for ModelVariationAreaFactory Model
  */
-class ModelVariationAreaFactory : public SubModelFactory {
+class ModelVariationAreaFactory : public ModelFactory {
  public:
   /**
    * @brief default constructor

@@ -6,7 +6,7 @@
 
 namespace DYN {
 
-  class ModelGeneratorPQFactory : public SubModelFactory
+  class ModelGeneratorPQFactory : public ModelFactory
   {
     public:
     ModelGeneratorPQFactory() {}

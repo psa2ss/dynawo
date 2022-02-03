@@ -152,7 +152,7 @@ static std::pair<boost::shared_ptr<Solver>, boost::shared_ptr<Model> > initSolve
   compile(dyd);
 
   // Model
-  Modeler modeler;
+  static Modeler modeler;
   // modeler.setDataInterface(data);
   modeler.setDynamicData(dyd);
   modeler.initSystem();

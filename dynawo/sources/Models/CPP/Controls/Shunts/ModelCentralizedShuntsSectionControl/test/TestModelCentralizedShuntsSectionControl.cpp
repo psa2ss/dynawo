@@ -33,8 +33,9 @@
 namespace DYN {
 
 static boost::shared_ptr<SubModel> initModelShunt(int nbShunts, int section0 = 0, bool isSelf = false) {
+  static SubModelFactory factory;
   boost::shared_ptr<SubModel> modelShunt =
-  SubModelFactory::createSubModelFromLib("../DYNModelCentralizedShuntsSectionControl" + std::string(sharedLibraryExtension()));
+      factory.createSubModelFromLib("../DYNModelCentralizedShuntsSectionControl" + std::string(sharedLibraryExtension()));
 
   std::vector<ParameterModeler> parameters;
   modelShunt->defineParameters(parameters);
@@ -70,8 +71,9 @@ static boost::shared_ptr<SubModel> initModelShunt(int nbShunts, int section0 = 0
 }
 
 TEST(ModelsCentralizedShuntsSectionControl, ModelCentralizedShuntsSectionControlDefineMethods) {
+  static SubModelFactory factory;
   boost::shared_ptr<SubModel> modelShunt =
-  SubModelFactory::createSubModelFromLib("../DYNModelCentralizedShuntsSectionControl" + std::string(sharedLibraryExtension()));
+      factory.createSubModelFromLib("../DYNModelCentralizedShuntsSectionControl" + std::string(sharedLibraryExtension()));
 
   std::vector<ParameterModeler> parameters;
   modelShunt->defineParameters(parameters);
@@ -99,7 +101,7 @@ TEST(ModelsCentralizedShuntsSectionControl, ModelCentralizedShuntsSectionControl
   ASSERT_EQ(elements.size(), 6);
 
   boost::shared_ptr<SubModel> modelShunt_missingPar =
-  SubModelFactory::createSubModelFromLib("../DYNModelCentralizedShuntsSectionControl" + std::string(sharedLibraryExtension()));
+      factory.createSubModelFromLib("../DYNModelCentralizedShuntsSectionControl" + std::string(sharedLibraryExtension()));
 
   std::vector<ParameterModeler> parameters_missingPar;
   modelShunt_missingPar->defineParameters(parameters_missingPar);

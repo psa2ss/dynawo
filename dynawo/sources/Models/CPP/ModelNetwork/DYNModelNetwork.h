@@ -41,9 +41,9 @@ static const double maximumValueCurrentLimit = 5000;   ///< Maximum acceptable v
 /**
  * @brief Network Model factory
  *
- * Implementation of @p SubModelFactory template for Network Model
+ * Implementation of @p ModelFactory template for Network Model
  */
-class ModelNetworkFactory : public SubModelFactory {
+class ModelNetworkFactory : public ModelFactory {
  public:
   /**
    * @brief default constructor

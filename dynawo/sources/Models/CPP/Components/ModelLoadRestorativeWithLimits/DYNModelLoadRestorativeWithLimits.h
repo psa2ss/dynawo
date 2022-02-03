@@ -30,9 +30,9 @@ class DataInterface;
 /**
 * @brief ModelLoadRestorativeWithLimits factory
 *
-* Implementation of @p SubModelFactory template for ModelLoadRestorativeWithLimits model
+* Implementation of @p ModelFactory template for ModelLoadRestorativeWithLimits model
 */
-class ModelLoadRestorativeWithLimitsFactory : public SubModelFactory {
+class ModelLoadRestorativeWithLimitsFactory : public ModelFactory {
  public:
   /**
   * @brief default constructor

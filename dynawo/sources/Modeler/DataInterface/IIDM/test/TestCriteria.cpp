@@ -247,7 +247,8 @@ createBusBreakerNetworkWithGenerators(double busV, double busVNom, double pow1, 
 
 static shared_ptr<SubModel>
 initModel(shared_ptr<DataInterface> data) {
-  shared_ptr<SubModel> modelNetwork = SubModelFactory::createSubModelFromLib("../../../../Models/CPP/ModelNetwork/DYNModelNetwork" +
+  static SubModelFactory factory;
+  shared_ptr<SubModel> modelNetwork = factory.createSubModelFromLib("../../../../Models/CPP/ModelNetwork/DYNModelNetwork" +
                                                 std::string(sharedLibraryExtension()));
   modelNetwork->initFromData(data);
   data->setModelNetwork(modelNetwork);

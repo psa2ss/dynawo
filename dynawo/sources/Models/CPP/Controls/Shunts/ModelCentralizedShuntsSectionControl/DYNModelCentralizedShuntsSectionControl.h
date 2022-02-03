@@ -30,10 +30,10 @@ class DataInterface;
 /**
  * @brief ModelCentralizedShuntsSectionControl factory
  *
- * Implementation of @p SubModelFactory template for
+ * Implementation of @p ModelFactory template for
  * ModelCentralizedShuntsSectionControl model
  */
-class ModelCentralizedShuntsSectionControlFactory : public SubModelFactory {
+class ModelCentralizedShuntsSectionControlFactory : public ModelFactory {
  public:
   /**
    * @brief default constructor

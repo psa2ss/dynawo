@@ -31,9 +31,9 @@ class DataInterface;
 /**
  * @brief Reference frequency factory
  *
- * Implementation of @p SubModelFactory template for Reference frequency Model
+ * Implementation of @p ModelFactory template for Reference frequency Model
  */
-class ModelOmegaRefFactory : public SubModelFactory {
+class ModelOmegaRefFactory : public ModelFactory {
  public:
   /**
    * @brief default constructor

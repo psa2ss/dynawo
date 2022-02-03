@@ -48,14 +48,14 @@ using parameters::ParametersSet;
  *
  * @return A pointer to a new instance of ModelVariationaAreaFactory
  */
-extern "C" DYN::SubModelFactory* getFactory() {
+extern "C" DYN::ModelFactory* getFactory() {
   return (new DYN::ModelVoltageSetPointChangeFactory());
 }
 
 /**
  * @brief ModelVoltageSetPointChangeFactory destroy method
  */
-extern "C" void deleteFactory(DYN::SubModelFactory* factory) {
+extern "C" void deleteFactory(DYN::ModelFactory* factory) {
   delete factory;
 }
 

@@ -33,8 +33,9 @@
 namespace DYN {
 
 static boost::shared_ptr<SubModel> initModelVoltageSetPointChange() {
+  static SubModelFactory factory;
   boost::shared_ptr<SubModel> modelVoltageSetPointChange =
-    SubModelFactory::createSubModelFromLib("../DYNModelVoltageSetPointChange" + std::string(sharedLibraryExtension()));
+    factory.createSubModelFromLib("../DYNModelVoltageSetPointChange" + std::string(sharedLibraryExtension()));
 
   std::vector<ParameterModeler> parameters;
   modelVoltageSetPointChange->defineParameters(parameters);
@@ -54,8 +55,9 @@ static boost::shared_ptr<SubModel> initModelVoltageSetPointChange() {
 }
 
 TEST(ModelsModelVoltageSetPointChange, ModelVoltageSetPointChangeDefineMethods) {
+  static SubModelFactory factory;
   boost::shared_ptr<SubModel> modelVoltageSetPointChange =
-    SubModelFactory::createSubModelFromLib("../DYNModelVoltageSetPointChange" + std::string(sharedLibraryExtension()));
+    factory.createSubModelFromLib("../DYNModelVoltageSetPointChange" + std::string(sharedLibraryExtension()));
 
   std::vector<ParameterModeler> parameters;
   modelVoltageSetPointChange->defineParameters(parameters);
@@ -109,8 +111,9 @@ TEST(ModelsModelVoltageSetPointChange, ModelVoltageSetPointChangeDefineMethods) 
 }
 
 TEST(ModelsModelVoltageSetPointChange, ModelVoltageSetPointChangeNoStopTime) {
+  static SubModelFactory factory;
   boost::shared_ptr<SubModel> modelVoltageSetPointChange =
-    SubModelFactory::createSubModelFromLib("../DYNModelVoltageSetPointChange" + std::string(sharedLibraryExtension()));
+    factory.createSubModelFromLib("../DYNModelVoltageSetPointChange" + std::string(sharedLibraryExtension()));
 
   std::vector<ParameterModeler> parameters;
   modelVoltageSetPointChange->defineParameters(parameters);

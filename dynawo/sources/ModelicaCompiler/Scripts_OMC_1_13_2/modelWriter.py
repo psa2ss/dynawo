@@ -86,11 +86,11 @@ class ModelWriterManager(ModelWriterBase):
 #include "DYNSubModel.h"
 __fill_model_include_header__
 
-extern "C" DYN::SubModelFactory* getFactory() {
+extern "C" DYN::ModelFactory* getFactory() {
   return (new DYN::Model__fill_model_name__Factory());
 }
 
-extern "C" void deleteFactory(DYN::SubModelFactory* factory) {
+extern "C" void deleteFactory(DYN::ModelFactory* factory) {
   delete factory;
 }
 
@@ -126,7 +126,7 @@ __fill_model_destructor__
 
 namespace DYN {
 
-  class Model__fill_model_name__Factory : public SubModelFactory
+  class Model__fill_model_name__Factory : public ModelFactory
   {
     public:
     Model__fill_model_name__Factory() {}

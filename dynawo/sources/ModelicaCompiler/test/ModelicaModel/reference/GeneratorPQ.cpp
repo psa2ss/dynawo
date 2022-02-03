@@ -4,11 +4,11 @@
 #include "GeneratorPQ_Dyn.h"
 #include "GeneratorPQ_Init.h"
 
-extern "C" DYN::SubModelFactory* getFactory() {
+extern "C" DYN::ModelFactory* getFactory() {
   return (new DYN::ModelGeneratorPQFactory());
 }
 
-extern "C" void deleteFactory(DYN::SubModelFactory* factory) {
+extern "C" void deleteFactory(DYN::ModelFactory* factory) {
   delete factory;
 }
 

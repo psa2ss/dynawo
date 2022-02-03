@@ -66,6 +66,10 @@ using parameters::Reference;
 
 namespace DYN {
 
+Modeler::Modeler() :
+subModelFactory_(new SubModelFactory()) {
+}
+
 void
 Modeler::initSystem() {
   model_ = shared_ptr<ModelMulti>(new ModelMulti());
@@ -84,7 +88,7 @@ Modeler::initNetwork() {
   shared_ptr<SubModel> modelNetwork;
   string DDBDir = getMandatoryEnvVar("DYNAWO_DDB_DIR");
 
-  modelNetwork = SubModelFactory::createSubModelFromLib(DDBDir + "/DYNModelNetwork" + sharedLibraryExtension());
+  modelNetwork = subModelFactory_->createSubModelFromLib(DDBDir + "/DYNModelNetwork" + sharedLibraryExtension());
   modelNetwork->initFromData(data_);
   data_->setModelNetwork(modelNetwork);
   modelNetwork->name("NETWORK");
@@ -106,7 +110,7 @@ Modeler::initModelDescription() {
 
     if ((itModelDescription->second)->hasCompiledModel()) {
       shared_ptr<SubModel> model;
-      model = SubModelFactory::createSubModelFromLib(itModelDescription->second->getLib());
+      model = subModelFactory_->createSubModelFromLib(itModelDescription->second->getLib());
       model->name((itModelDescription->second)->getID());
       model->staticId((itModelDescription->second)->getStaticId());
       shared_ptr<ParametersSet> params = (itModelDescription->second)->getParametersSet();

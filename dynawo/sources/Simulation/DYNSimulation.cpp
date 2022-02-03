@@ -110,7 +110,6 @@
 #include "DYNSolverFactory.h"
 #include "DYNTimer.h"
 #include "DYNModelMulti.h"
-#include "DYNModeler.h"
 #include "DYNFileSystemUtils.h"
 #include "DYNTerminate.h"
 #include "DYNDataInterface.h"
@@ -726,12 +725,12 @@ Simulation::initFromData(const shared_ptr<DataInterface>& data, const shared_ptr
 #if defined(_DEBUG_) || defined(PRINT_TIMERS)
   Timer timer("Simulation::initFromData()");
 #endif
-  Modeler modeler;
-  modeler.setDataInterface(data);
-  modeler.setDynamicData(dyd);
-  modeler.initSystem();
+  modeler_ = boost::shared_ptr<Modeler>(new Modeler());
+  modeler_->setDataInterface(data);
+  modeler_->setDynamicData(dyd);
+  modeler_->initSystem();
 
-  model_ = modeler.getModel();
+  model_ = modeler_->getModel();
   model_->setWorkingDirectory(context_->getWorkingDirectory());
   model_->setTimeline(timeline_);
   model_->setConstraints(constraintsCollection_);

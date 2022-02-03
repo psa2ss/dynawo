@@ -33,8 +33,9 @@
 namespace DYN {
 
 static boost::shared_ptr<SubModel> initModelLoad(double u0Pu) {
+  static SubModelFactory factory;
   boost::shared_ptr<SubModel> modelLoad =
-  SubModelFactory::createSubModelFromLib("../DYNModelLoadRestorativeWithLimits" + std::string(sharedLibraryExtension()));
+      factory.createSubModelFromLib("../DYNModelLoadRestorativeWithLimits" + std::string(sharedLibraryExtension()));
 
   std::vector<ParameterModeler> parameters;
   modelLoad->defineParameters(parameters);
@@ -60,8 +61,9 @@ static boost::shared_ptr<SubModel> initModelLoad(double u0Pu) {
 }
 
 TEST(ModelsLoadRestorativeWithLimits, ModelLoadRestorativeWithLimitsDefineMethods) {
+  static SubModelFactory factory;
   boost::shared_ptr<SubModel> modelLoad =
-  SubModelFactory::createSubModelFromLib("../DYNModelLoadRestorativeWithLimits" + std::string(sharedLibraryExtension()));
+      factory.createSubModelFromLib("../DYNModelLoadRestorativeWithLimits" + std::string(sharedLibraryExtension()));
 
   std::vector<ParameterModeler> parameters;
   modelLoad->defineParameters(parameters);
@@ -96,7 +98,7 @@ TEST(ModelsLoadRestorativeWithLimits, ModelLoadRestorativeWithLimitsDefineMethod
 
 
   boost::shared_ptr<SubModel> modelLoad_missingPar =
-  SubModelFactory::createSubModelFromLib("../DYNModelLoadRestorativeWithLimits" + std::string(sharedLibraryExtension()));
+      factory.createSubModelFromLib("../DYNModelLoadRestorativeWithLimits" + std::string(sharedLibraryExtension()));
 
   std::vector<ParameterModeler> parameters_missingPar;
   modelLoad_missingPar->defineParameters(parameters_missingPar);

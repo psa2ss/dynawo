@@ -175,7 +175,7 @@ static std::pair<boost::shared_ptr<Solver>, boost::shared_ptr<Model> > initSolve
 #else
   _putenv_s("DYNAWO_DDB_DIR", ddb_dir.c_str());
 #endif  // Model
-  Modeler modeler;
+  static Modeler modeler;
   modeler.setDataInterface(data);
   modeler.setDynamicData(dyd);
   modeler.initSystem();
@@ -199,7 +199,7 @@ static std::pair<boost::shared_ptr<Solver>, boost::shared_ptr<Model> > initSolve
   compile(dyd);
 
   // Model
-  Modeler modeler;
+  static Modeler modeler;
   // modeler.setDataInterface(data);
   modeler.setDynamicData(dyd);
   modeler.initSystem();

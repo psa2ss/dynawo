@@ -33,24 +33,18 @@
 
 namespace DYN {
 class SubModel;
-class SubModelFactories;
 
-/**
- * @brief SubModelFactory class
- *
- * Utility interface used to define a building class for sub models.
- */
-class SubModelFactory : private boost::noncopyable {
+class ModelFactory : private boost::noncopyable {
  public:
   /**
    * @brief Constructor
    */
-  SubModelFactory() { }
+  ModelFactory() { }
 
   /**
    * @brief Destructor
    */
-  virtual ~SubModelFactory();
+  virtual ~ModelFactory() {}
 
   /**
    * @brief create a new instance of a submodel
@@ -65,50 +59,44 @@ class SubModelFactory : private boost::noncopyable {
    */
   virtual void destroy(SubModel*) const = 0;
 
-  /**
-   * @brief Create a submodel loading given lib
-   *
-   * @param lib : Name of the submodel library to load
-   * @return Pointer to the created submodel
-   */
-  static boost::shared_ptr<SubModel> createSubModelFromLib(const std::string& lib);
+  const boost::shared_ptr<boost::dll::shared_library>& getLib() const {
+    return lib_;
+  }
 
+  void setLib(const boost::shared_ptr<boost::dll::shared_library> &lib) {
+    lib_ = lib;
+  }
+
+ private:
   boost::shared_ptr<boost::dll::shared_library> lib_;  ///< Library of the submodel
 };
 
 /**
 * @brief function pointer type to destroy a model.
 */
-typedef void deleteSubModelFactory_t(SubModelFactory*);
+typedef void deleteSubModelFactory_t(ModelFactory*);
 
 /**
- * @brief SubModelFactories class
+ * @brief SubModelFactory class
  *
- * Manage submodel factories to avoid loading the same library multiple
- * time.
+ * Utility interface used to define a building class for sub models.
  */
-class SubModelFactories : private boost::noncopyable {
+class SubModelFactory : private boost::noncopyable {
  public:
-  /**
-   * @brief Constructor
-   */
-  SubModelFactories();
-
-  /**
-   * @brief destructor
-   */
-  ~SubModelFactories();
-
-  /**
-   * @brief Get unique instance
-   * @return  The unique instance
-   */
-  static SubModelFactories& getInstance();
-
   /**
   * @brief iterator type on SubModelFactory map.
   */
-  typedef std::map<std::string, SubModelFactory*>::iterator SubmodelFactoryIterator;
+  typedef std::map<std::string, ModelFactory*>::iterator SubmodelFactoryIterator;
+
+  /**
+   * @brief Constructor
+   */
+  SubModelFactory() { }
+
+  /**
+   * @brief Destructor
+   */
+  virtual ~SubModelFactory();
 
   /**
    * @brief Get available factory for a given library name
@@ -136,7 +124,7 @@ class SubModelFactories : private boost::noncopyable {
    * @param factory : Pointer to the SubModel to add - value in the
    * map
    */
-  void add(const std::string& lib, SubModelFactory* factory);
+  void add(const std::string& lib, ModelFactory* factory);
 
   /**
    * @brief Add a factory associated to its destruction method
@@ -147,12 +135,17 @@ class SubModelFactories : private boost::noncopyable {
    */
   void add(const std::string& lib, const boost::function<deleteSubModelFactory_t>& deleteFactory);
 
+  /**
+   * @brief Create a submodel loading given lib
+   *
+   * @param lib : Name of the submodel library to load
+   * @return Pointer to the created submodel
+   */
+  boost::shared_ptr<SubModel> createSubModelFromLib(const std::string& lib);
+
  private:
-  std::map<std::string, SubModelFactory*> factoryMap_;  ///< associate a library factory with the name of the library
+  std::map<std::string, ModelFactory*> factoryMap_;  ///< associate a library factory with the name of the library
   std::map<std::string, boost::function<deleteSubModelFactory_t> > factoryMapDelete_;  ///< associate a library factory with its destruction method
-#ifdef LANG_CXX11
-  mutable std::mutex factoriesMutex_;  ///< Mutex to handle multithreading access to factories
-#endif
 };
 
 /**
@@ -167,10 +160,10 @@ class SubModelDelete {
    *
    * @param factory model factory to delete
    */
-  explicit SubModelDelete(SubModelFactory* factory);
+  explicit SubModelDelete(ModelFactory* factory);
 
   /**
-   * @brief Function to use this class as a Functor
+   * @brief Function to use this class as a Functor3
    *
    * @param subModel pointer to the subModel to delete
    * map
@@ -178,7 +171,7 @@ class SubModelDelete {
   void operator()(SubModel* subModel);
 
  private:
-  SubModelFactory* factory_;  ///< factory associated to the model to destroy
+  ModelFactory* factory_;  ///< factory associated to the model to destroy
 };
 }  // namespace DYN
 
@@ -186,12 +179,12 @@ class SubModelDelete {
  * @brief SubModelFactory getter
  * @return A pointer to a new instance of SubModelFactory
  */
-extern "C" DYN::SubModelFactory* getFactory();
+extern "C" DYN::ModelFactory* getFactory();
 
 /**
  * @brief SubModelFactory destroy method
  * @param factory the SubModelFactory to destroy
  */
-extern "C" void deleteFactory(DYN::SubModelFactory* factory);
+extern "C" void deleteFactory(DYN::ModelFactory* factory);
 
 #endif  // MODELER_COMMON_DYNSUBMODELFACTORY_H_

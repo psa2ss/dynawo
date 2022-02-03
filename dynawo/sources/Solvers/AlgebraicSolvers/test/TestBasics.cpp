@@ -91,7 +91,7 @@ static boost::shared_ptr<Model> initModelFromDyd(std::string dydFileName) {
   cf.concatRefs();
 
   // Model
-  Modeler modeler;
+  static Modeler modeler;
   modeler.setDynamicData(dyd);
   modeler.initSystem();
 

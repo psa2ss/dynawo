@@ -33,6 +33,7 @@ class DynamicData;
 class DataInterface;
 class SubModel;
 class ModelDescription;
+class SubModelFactory;
 
 /**
  * @class Modeler
@@ -46,7 +47,7 @@ class Modeler {
   /**
    * @brief default constructor
    */
-  Modeler() { }
+  Modeler();
 
   /**
    * @brief set the data interface to use do define the model multi
@@ -154,6 +155,7 @@ class Modeler {
       const boost::shared_ptr<SubModel>& subModel2, std::string& var2, const std::string& labelNode) const;
 
  private:
+  boost::shared_ptr<SubModelFactory> subModelFactory_;
   boost::shared_ptr<DataInterface> data_;  ///< data used to build the model multi
   boost::shared_ptr<DynamicData> dyd_;  ///< dynamic data used to build the model multi
   boost::shared_ptr<ModelMulti> model_;  ///< model created thanks to previous data

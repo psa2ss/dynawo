@@ -88,14 +88,14 @@ using parameters::ParametersSet;
  *
  * @return A pointer to a new instance of ModelNetworkFactory
  */
-extern "C" DYN::SubModelFactory* getFactory() {
+extern "C" DYN::ModelFactory* getFactory() {
   return (new DYN::ModelNetworkFactory());
 }
 
 /**
  * @brief ModelNewtorkFactory destroy method
  */
-extern "C" void deleteFactory(DYN::SubModelFactory* factory) {
+extern "C" void deleteFactory(DYN::ModelFactory* factory) {
   delete factory;
 }
 
