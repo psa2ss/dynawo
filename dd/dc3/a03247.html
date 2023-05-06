@@ -14,7 +14,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>Dynawo: Member List</title>
+<title>Dynawo: DYN::ModelNetworkFactory Class Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -39,7 +39,7 @@
  <tr style="height: 150px;">
   <td style="padding-left: 0.5em;">
    <div id="projectbrief">Developer documentation for Dynawo
-    1.5.0</div>
+    1.6.0</div>
   </td>
  </tr>
  </tbody>
@@ -75,7 +75,7 @@ $(function() {
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(document).ready(function(){initNavTree('dc/d45/a03250.html','../../');});
+$(document).ready(function(){initNavTree('dd/dc3/a03247.html','../../');});
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -94,49 +94,105 @@ $(document).ready(function(){initNavTree('dc/d45/a03250.html','../../');});
 </div>
 
 <div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="../../d1/dfa/a03244.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">DYN::ModelPhaseTapChanger Member List</div>  </div>
+<div class="title">DYN::ModelNetworkFactory Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>This is the complete list of members for <a class="el" href="../../dc/d45/a03250.html">DYN::ModelPhaseTapChanger</a>, including all inherited members.</p>
-<table class="directory">
-  <tr class="even"><td class="entry"><a class="el" href="../../dc/d77/a03270.html#a22430dcda9674cd26e81e9dbfdb3fbc1">addStep</a>(const TapChangerStep &amp;step)</td><td class="entry"><a class="el" href="../../dc/d77/a03270.html">DYN::ModelTapChanger</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr><td class="entry"><a class="el" href="../../dc/d45/a03250.html#a427dc94a52b90f71f2b8061ba9d3701c">currentOverThresholdState_</a></td><td class="entry"><a class="el" href="../../dc/d45/a03250.html">DYN::ModelPhaseTapChanger</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="../../dc/d45/a03250.html#abf7051fcfea20f1576249f3a250928e4">evalG</a>(double t, double iValue, bool nodeOff, state_g *g, double disable, double locked, bool tfoClosed)</td><td class="entry"><a class="el" href="../../dc/d45/a03250.html">DYN::ModelPhaseTapChanger</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="../../dc/d45/a03250.html#a913d40d0735663c67aaf0a0cb220e9f8">evalZ</a>(double t, state_g *g, ModelNetwork *network, double disable, bool P1SupP2, double locked, bool tfoClosed)</td><td class="entry"><a class="el" href="../../dc/d45/a03250.html">DYN::ModelPhaseTapChanger</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="../../dc/d77/a03270.html#ac07ace8368a49428c5cd12ee361d7ee3">getCurrentStep</a>() const</td><td class="entry"><a class="el" href="../../dc/d77/a03270.html">DYN::ModelTapChanger</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr><td class="entry"><a class="el" href="../../dc/d77/a03270.html#a60ee4d8687660b182654fc81eaddf75d">getCurrentStepIndex</a>() const</td><td class="entry"><a class="el" href="../../dc/d77/a03270.html">DYN::ModelTapChanger</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="../../dc/d77/a03270.html#ac118581679b043aeaacd8403cf1cc25d">getHighStepIndex</a>() const</td><td class="entry"><a class="el" href="../../dc/d77/a03270.html">DYN::ModelTapChanger</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr><td class="entry"><a class="el" href="../../dc/d45/a03250.html#a87d4d2154b37158761d63c38ce63b39c">getIncreaseTap</a>(bool P1SupP2) const</td><td class="entry"><a class="el" href="../../dc/d45/a03250.html">DYN::ModelPhaseTapChanger</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="../../dc/d77/a03270.html#a600796be645afc7c49c21d941f39d16c">getLowStepIndex</a>() const</td><td class="entry"><a class="el" href="../../dc/d77/a03270.html">DYN::ModelTapChanger</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr><td class="entry"><a class="el" href="../../dc/d77/a03270.html#a22d65ee88af0be8e5489ed1d86b87544">getRegulating</a>() const</td><td class="entry"><a class="el" href="../../dc/d77/a03270.html">DYN::ModelTapChanger</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="../../dc/d77/a03270.html#af4ba633d5daaef9d8a7742afd0c79148">getStep</a>(int index) const</td><td class="entry"><a class="el" href="../../dc/d77/a03270.html">DYN::ModelTapChanger</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr><td class="entry"><a class="el" href="../../dc/d77/a03270.html#ab8abbf950b8006cf53ec4dc3b02b0292">getTFirst</a>() const</td><td class="entry"><a class="el" href="../../dc/d77/a03270.html">DYN::ModelTapChanger</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="../../dc/d77/a03270.html#a297d193e576dc6d22de4f88429d59d5a">getTNext</a>() const</td><td class="entry"><a class="el" href="../../dc/d77/a03270.html">DYN::ModelTapChanger</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr><td class="entry"><a class="el" href="../../dc/d77/a03270.html#ab5a8072674f3a2a1928ec9b65630c999">id</a>() const</td><td class="entry"><a class="el" href="../../dc/d77/a03270.html">DYN::ModelTapChanger</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="../../dc/d45/a03250.html#ae2884c6ffa913078f7d30827a89ec96f">ModelPhaseTapChanger</a>(const std::string &amp;id, int lowIndex)</td><td class="entry"><a class="el" href="../../dc/d45/a03250.html">DYN::ModelPhaseTapChanger</a></td><td class="entry"><span class="mlabel">explicit</span></td></tr>
-  <tr><td class="entry"><a class="el" href="../../dc/d77/a03270.html#ae208e87157defb8e8bd9c1158cba1628">ModelTapChanger</a>(const std::string &amp;id, int lowIndex)</td><td class="entry"><a class="el" href="../../dc/d77/a03270.html">DYN::ModelTapChanger</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">explicit</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="../../dc/d45/a03250.html#a7419c2b9c443fb687ca1ebae55056538">moveDown_</a></td><td class="entry"><a class="el" href="../../dc/d45/a03250.html">DYN::ModelPhaseTapChanger</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr><td class="entry"><a class="el" href="../../dc/d45/a03250.html#af96af982d2c7fbddb55ca9c2cd9f4a38">moveUp_</a></td><td class="entry"><a class="el" href="../../dc/d45/a03250.html">DYN::ModelPhaseTapChanger</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="../../dc/d77/a03270.html#af3a7176235ef47debe0cec712dd5651a">setCurrentStepIndex</a>(int index)</td><td class="entry"><a class="el" href="../../dc/d77/a03270.html">DYN::ModelTapChanger</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr><td class="entry"><a class="el" href="../../dc/d77/a03270.html#acd203a0a98f84bdb307738214cd24cf2">setHighStepIndex</a>(int index)</td><td class="entry"><a class="el" href="../../dc/d77/a03270.html">DYN::ModelTapChanger</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="../../dc/d77/a03270.html#a5659b5a75a3def4cdba8ac8506a4efb3">setRegulating</a>(bool regulating)</td><td class="entry"><a class="el" href="../../dc/d77/a03270.html">DYN::ModelTapChanger</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr><td class="entry"><a class="el" href="../../dc/d77/a03270.html#a7ba0f68732ccfdb493beea9dc8afe31b">setTFirst</a>(double time)</td><td class="entry"><a class="el" href="../../dc/d77/a03270.html">DYN::ModelTapChanger</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="../../dc/d45/a03250.html#a83d8b3d173a9bc2e498c29937b52eee2">setThresholdI</a>(double threshold)</td><td class="entry"><a class="el" href="../../dc/d45/a03250.html">DYN::ModelPhaseTapChanger</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr><td class="entry"><a class="el" href="../../dc/d77/a03270.html#addfb2af44012da76b41220309fc3158f">setTNext</a>(double time)</td><td class="entry"><a class="el" href="../../dc/d77/a03270.html">DYN::ModelTapChanger</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="../../dc/d77/a03270.html#a6c4c7f2948b5ef90e0187fa5bd9c907d">size</a>() const</td><td class="entry"><a class="el" href="../../dc/d77/a03270.html">DYN::ModelTapChanger</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr><td class="entry"><a class="el" href="../../dc/d45/a03250.html#a5e293b9b67909d929ac2a8e048fd4d78">sizeG</a>() const</td><td class="entry"><a class="el" href="../../dc/d45/a03250.html">DYN::ModelPhaseTapChanger</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="../../dc/d45/a03250.html#aa47b07d675c20b05560abb2d57141299">sizeZ</a>() const</td><td class="entry"><a class="el" href="../../dc/d45/a03250.html">DYN::ModelPhaseTapChanger</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr><td class="entry"><a class="el" href="../../dc/d45/a03250.html#a7f06271c2b435f723f378579e40a3b0d">tapRefDown_</a></td><td class="entry"><a class="el" href="../../dc/d45/a03250.html">DYN::ModelPhaseTapChanger</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="../../dc/d45/a03250.html#adc5460893e2a1cccab0849fdda52973a">tapRefUp_</a></td><td class="entry"><a class="el" href="../../dc/d45/a03250.html">DYN::ModelPhaseTapChanger</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr><td class="entry"><a class="el" href="../../dc/d45/a03250.html#a098981618c393089d70140f91941fb66">thresholdI_</a></td><td class="entry"><a class="el" href="../../dc/d45/a03250.html">DYN::ModelPhaseTapChanger</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="../../dc/d45/a03250.html#ad17b24102b5ca4c1d6d2b21fb45084fe">whenDown_</a></td><td class="entry"><a class="el" href="../../dc/d45/a03250.html">DYN::ModelPhaseTapChanger</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr><td class="entry"><a class="el" href="../../dc/d45/a03250.html#a6da4d2d9e8a2ebd8e6cd5ecf1cd9144a">whenLastTap_</a></td><td class="entry"><a class="el" href="../../dc/d45/a03250.html">DYN::ModelPhaseTapChanger</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="../../dc/d45/a03250.html#a43db91d131eb00f12cfa1672a7360477">whenUp_</a></td><td class="entry"><a class="el" href="../../dc/d45/a03250.html">DYN::ModelPhaseTapChanger</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr><td class="entry"><a class="el" href="../../dc/d45/a03250.html#a6f8855a70c66640665c678bf61209fc9">~ModelPhaseTapChanger</a>()</td><td class="entry"><a class="el" href="../../dc/d45/a03250.html">DYN::ModelPhaseTapChanger</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="../../dc/d77/a03270.html#a1791be028b1f0f70416455ce53e89d8a">~ModelTapChanger</a>()</td><td class="entry"><a class="el" href="../../dc/d77/a03270.html">DYN::ModelTapChanger</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-</table></div><!-- contents -->
+<p>Network <a class="el" href="../../d4/dff/a02723.html" title="Generic model Generic class for Model. ">Model</a> factory.  
+ <a href="../../dd/dc3/a03247.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="../../d5/d54/a00938_source.html">DYNModelNetwork.h</a>&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for DYN::ModelNetworkFactory:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="../../dd/dc3/a03247.png" usemap="#DYN::ModelNetworkFactory_map" alt=""/>
+  <map id="DYN::ModelNetworkFactory_map" name="DYN::ModelNetworkFactory_map">
+<area href="../../d5/d4d/a02763.html" title="SubModelFactory class. " alt="DYN::SubModelFactory" shape="rect" coords="0,56,170,80"/>
+</map>
+ </div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:ab37aaa05a2102b9e76436f6b68b6737d"><td class="memItemLeft" align="right" valign="top"><a id="ab37aaa05a2102b9e76436f6b68b6737d"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dc3/a03247.html#ab37aaa05a2102b9e76436f6b68b6737d">ModelNetworkFactory</a> ()</td></tr>
+<tr class="memdesc:ab37aaa05a2102b9e76436f6b68b6737d"><td class="mdescLeft">&#160;</td><td class="mdescRight">default constructor <br /></td></tr>
+<tr class="separator:ab37aaa05a2102b9e76436f6b68b6737d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a46576860027085999ad3f1c41c46c6c0"><td class="memItemLeft" align="right" valign="top"><a id="a46576860027085999ad3f1c41c46c6c0"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dc3/a03247.html#a46576860027085999ad3f1c41c46c6c0">~ModelNetworkFactory</a> ()</td></tr>
+<tr class="memdesc:a46576860027085999ad3f1c41c46c6c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">default destructor <br /></td></tr>
+<tr class="separator:a46576860027085999ad3f1c41c46c6c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a437a6f892d00ca6e102c5b97a9114683"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../df/d02/a02755.html">SubModel</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dc3/a03247.html#a437a6f892d00ca6e102c5b97a9114683">create</a> () const</td></tr>
+<tr class="memdesc:a437a6f892d00ca6e102c5b97a9114683"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="../../db/dd3/a03251.html" title="Generic class for the standard AC network (described using C++ models) ">ModelNetwork</a> getter.  <a href="#a437a6f892d00ca6e102c5b97a9114683">More...</a><br /></td></tr>
+<tr class="separator:a437a6f892d00ca6e102c5b97a9114683"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a33dadfc4507cb158a709003e94e9a190"><td class="memItemLeft" align="right" valign="top"><a id="a33dadfc4507cb158a709003e94e9a190"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dc3/a03247.html#a33dadfc4507cb158a709003e94e9a190">destroy</a> (<a class="el" href="../../df/d02/a02755.html">SubModel</a> *) const</td></tr>
+<tr class="memdesc:a33dadfc4507cb158a709003e94e9a190"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="../../db/dd3/a03251.html" title="Generic class for the standard AC network (described using C++ models) ">ModelNetwork</a> destroy. <br /></td></tr>
+<tr class="separator:a33dadfc4507cb158a709003e94e9a190"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_a02763"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_a02763')"><img src="../../closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="../../d5/d4d/a02763.html">DYN::SubModelFactory</a></td></tr>
+<tr class="memitem:a1bb6496935dc2d52e0c560aeefe28aa8 inherit pub_methods_a02763"><td class="memItemLeft" align="right" valign="top"><a id="a1bb6496935dc2d52e0c560aeefe28aa8"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d4d/a02763.html#a1bb6496935dc2d52e0c560aeefe28aa8">SubModelFactory</a> ()</td></tr>
+<tr class="memdesc:a1bb6496935dc2d52e0c560aeefe28aa8 inherit pub_methods_a02763"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor. <br /></td></tr>
+<tr class="separator:a1bb6496935dc2d52e0c560aeefe28aa8 inherit pub_methods_a02763"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeae89abfad8d2a15989016592b78982a inherit pub_methods_a02763"><td class="memItemLeft" align="right" valign="top"><a id="aeae89abfad8d2a15989016592b78982a"></a>
+virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d4d/a02763.html#aeae89abfad8d2a15989016592b78982a">~SubModelFactory</a> ()</td></tr>
+<tr class="memdesc:aeae89abfad8d2a15989016592b78982a inherit pub_methods_a02763"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor. <br /></td></tr>
+<tr class="separator:aeae89abfad8d2a15989016592b78982a inherit pub_methods_a02763"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
+<tr class="inherit_header pub_static_methods_a02763"><td colspan="2" onclick="javascript:toggleInherit('pub_static_methods_a02763')"><img src="../../closed.png" alt="-"/>&#160;Static Public Member Functions inherited from <a class="el" href="../../d5/d4d/a02763.html">DYN::SubModelFactory</a></td></tr>
+<tr class="memitem:acadba5eed3d7b590d7a855998f7b264a inherit pub_static_methods_a02763"><td class="memItemLeft" align="right" valign="top">static boost::shared_ptr&lt; <a class="el" href="../../df/d02/a02755.html">SubModel</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d4d/a02763.html#acadba5eed3d7b590d7a855998f7b264a">createSubModelFromLib</a> (const std::string &amp;lib)</td></tr>
+<tr class="memdesc:acadba5eed3d7b590d7a855998f7b264a inherit pub_static_methods_a02763"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a submodel loading given lib.  <a href="../../d5/d4d/a02763.html#acadba5eed3d7b590d7a855998f7b264a">More...</a><br /></td></tr>
+<tr class="separator:acadba5eed3d7b590d7a855998f7b264a inherit pub_static_methods_a02763"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_attribs_a02763"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_a02763')"><img src="../../closed.png" alt="-"/>&#160;Public Attributes inherited from <a class="el" href="../../d5/d4d/a02763.html">DYN::SubModelFactory</a></td></tr>
+<tr class="memitem:a801e01b80f9214f3af8c933f24e9f297 inherit pub_attribs_a02763"><td class="memItemLeft" align="right" valign="top"><a id="a801e01b80f9214f3af8c933f24e9f297"></a>
+boost::shared_ptr&lt; boost::dll::shared_library &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d4d/a02763.html#a801e01b80f9214f3af8c933f24e9f297">lib_</a></td></tr>
+<tr class="memdesc:a801e01b80f9214f3af8c933f24e9f297 inherit pub_attribs_a02763"><td class="mdescLeft">&#160;</td><td class="mdescRight">Library of the submodel. <br /></td></tr>
+<tr class="separator:a801e01b80f9214f3af8c933f24e9f297 inherit pub_attribs_a02763"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Network <a class="el" href="../../d4/dff/a02723.html" title="Generic model Generic class for Model. ">Model</a> factory. </p>
+<p>Implementation of <code><a class="el" href="../../d5/d4d/a02763.html" title="SubModelFactory class. ">SubModelFactory</a></code> template for Network <a class="el" href="../../d4/dff/a02723.html" title="Generic model Generic class for Model. ">Model</a> </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a437a6f892d00ca6e102c5b97a9114683"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a437a6f892d00ca6e102c5b97a9114683">&#9670;&nbsp;</a></span>create()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../df/d02/a02755.html">SubModel</a>* DYN::ModelNetworkFactory::create </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="../../db/dd3/a03251.html" title="Generic class for the standard AC network (described using C++ models) ">ModelNetwork</a> getter. </p>
+<dl class="section return"><dt>Returns</dt><dd>A pointer to a new instance of <a class="el" href="../../d4/dff/a02723.html" title="Generic model Generic class for Model. ">Model</a> Network </dd></dl>
+
+<p>Implements <a class="el" href="../../d5/d4d/a02763.html#acd583c8cef912d3c0ee48ac7dc7338a8">DYN::SubModelFactory</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following file:<ul>
+<li><a class="el" href="../../d5/d54/a00938_source.html">DYNModelNetwork.h</a></li>
+</ul>
+</div><!-- contents -->
 </div><!-- doc-content -->
 <!--
     Copyright (c) 2015-2019, RTE (http://www.rte-france.com)
@@ -152,7 +208,8 @@ $(document).ready(function(){initNavTree('dc/d45/a03250.html','../../');});
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Sat Dec 24 2022 03:01:15 for Dynawo by
+    <li class="navelem"><b>DYN</b></li><li class="navelem"><a class="el" href="../../dd/dc3/a03247.html">ModelNetworkFactory</a></li>
+    <li class="footer">Generated on Sat May 6 2023 18:13:22 for Dynawo by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.14 </li>
   </ul>

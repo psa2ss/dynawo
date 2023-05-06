@@ -1,6 +1,9 @@
 var a00545 =
 [
-    [ "addElement", "d8/deb/a00545.html#a1cf23a0b4d2b7cdcd0e6d5b75b304de3", null ],
-    [ "addSubElement", "d8/deb/a00545.html#af79540637f3b08b1085aaaf0c6114421", null ],
-    [ "replaceMacroInVariableId", "d8/deb/a00545.html#aa91d8c788d4426901ab173149051a531", null ]
+    [ "ASSERT_DOUBLE_EQUALS_DYNAWO", "d8/deb/a00545.html#a15b612c792c0dc04c4ca70831cad5ff0", null ],
+    [ "ASSERT_THROW_DYNAWO", "d8/deb/a00545.html#a3c873a7b0f333a727460be5bc1c13b3a", null ],
+    [ "EXPECT_ASSERT_DYNAWO", "d8/deb/a00545.html#af4a31bd964069d134944e9c83e43a782", null ],
+    [ "INIT_XML_DYNAWO", "d8/deb/a00545.html#a961c5eff88f35eb3eee6484c5e9182d0", null ],
+    [ "key2Str", "d8/deb/a00545.html#a543b39db82612484e7242b9bfe754628", null ],
+    [ "type2Str", "d8/deb/a00545.html#a98ebff40c1bc80287831c01bbe12e650", null ]
 ];
