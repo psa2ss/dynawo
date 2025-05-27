@@ -1,6 +1,6 @@
 var a00470 =
 [
-    [ "mapcompabs", "dc/db2/a02574.html", "dc/db2/a02574" ],
+    [ "mapcompabs", "d7/d66/a02580.html", "d7/d66/a02580" ],
     [ "typeVarC_t", "d0/d29/a00470.html#a2855db29550ca43733c78c4df0688553", [
       [ "VAR_TYPE_STRING", "d0/d29/a00470.html#a2855db29550ca43733c78c4df0688553a4a6a352360eafc6481205885d8d72127", null ],
       [ "VAR_TYPE_BOOL", "d0/d29/a00470.html#a2855db29550ca43733c78c4df0688553a5b1abde2b0cfc3eb3bb063ec7b705627", null ],
@@ -9,7 +9,9 @@ var a00470 =
     ] ],
     [ "double2String", "d0/d29/a00470.html#a896d37750480df79d5c2ec2d0760e62e", null ],
     [ "doubleEquals", "d0/d29/a00470.html#a6a4d4ee76caa82a0d7f10b7d3c7b7ff6", null ],
+    [ "doubleGreater", "d0/d29/a00470.html#a14e8ca60d84dfae0f0dbdd6ad64b61ab", null ],
     [ "doubleIsZero", "d0/d29/a00470.html#a7a639ffbca471975cc9419495a6cbbe1", null ],
+    [ "doubleLess", "d0/d29/a00470.html#a9aabb6fc078f25679067b74d37e75185", null ],
     [ "doubleNotEquals", "d0/d29/a00470.html#a5f98db80f479c2394042817eb388650d", null ],
     [ "fromNativeBool", "d0/d29/a00470.html#a49c50053c7ab6b8953b2726b80b19b77", null ],
     [ "getCurrentPrecision", "d0/d29/a00470.html#a16e6866a242882fdb4eba3bcbc08fee0", null ],
